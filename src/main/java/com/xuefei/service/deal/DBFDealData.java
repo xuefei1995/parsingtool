@@ -149,18 +149,20 @@ public class DBFDealData {
         List<String> collect = dbfData.stream().map(DBFData::getKmdm).distinct().collect(Collectors.toList());
         Set<String> sceneSet = new HashSet<>();
 
-        for (int i = 0; i < collect.size(); i++) {
-            SSMap.SSData ssData = SSMap.getSSMap().get(collect.get(i));
+        int i = 1;
+        for (String kmdm : collect) {
+            SSMap.SSData ssData = SSMap.getSSMap().get(kmdm);
             if (sceneSet.contains(ssData.getSceneCode())) {
                 continue;
             }
-            XSSFRow row = sheet.createRow(i + 1);
+            XSSFRow row = sheet.createRow(i);
             row.createCell(0).setCellValue("20211030");
             row.createCell(1).setCellValue(ssData.getSceneCode());
             row.createCell(2).setCellValue(ssData.getSceneName());
             row.createCell(3).setCellValue(ssData.getStartTime());
             row.createCell(4).setCellValue(ssData.getEndTime());
             sceneSet.add(ssData.getSceneCode());
+            i++;
         }
     }
 
