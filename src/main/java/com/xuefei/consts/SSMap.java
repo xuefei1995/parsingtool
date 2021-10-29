@@ -29,6 +29,7 @@ public class SSMap {
         for (int i = 403; i < 416; i++) {
             map.put(String.valueOf(i), new SSData("13", "场次三", "2021-10-30 16:00:00", "2021-10-30 18:00:00"));
         }
+        map.put("418", new SSData("13", "场次三", "2021-10-30 16:00:00", "2021-10-30 18:00:00"));
     }
 
     public static Map<String, SSData> getSSMap() {
