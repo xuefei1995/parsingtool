@@ -3,6 +3,8 @@ package com.xuefei.util;
 import org.apache.commons.codec.binary.Base64;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
 public class Base64Util {
@@ -16,5 +18,27 @@ public class Base64Util {
             }
         }
         return new ByteArrayInputStream(b);
+    }
+
+    public static String inputStreamToBase64(InputStream inputStream) {
+        try {
+            ByteArrayOutputStream swapStream = new ByteArrayOutputStream();
+            byte[] buff = new byte[100];
+            int rc = 0;
+            while ((rc = inputStream.read(buff, 0, 100)) > 0) {
+                swapStream.write(buff, 0, rc);
+            }
+            byte[] data = swapStream.toByteArray();
+            return new String(Base64.encodeBase64(data));
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                inputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
 }
