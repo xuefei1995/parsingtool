@@ -55,8 +55,8 @@ public class HNDownloadDealData {
             examData.put("subjectcode", "1");
             examData.put("subject", "公务员考试");
             examData.put("seatnum", i);
-            examData.put("starttime", "2021-11-29 09:00:00");
-            examData.put("endtime", "2021-11-30 18:00:00");
+            examData.put("starttime", "2021-11-25 09:00:00");
+            examData.put("endtime", "2021-11-26 18:00:00");
             exam.add(examData);
 
             i++;
@@ -65,7 +65,7 @@ public class HNDownloadDealData {
             return;
         }
 
-        DbUtil.createDB(hnDownloadData.get(0).getOrgCode(), "20211129", outPath, studentInfos, exam);
+        DbUtil.createDB(hnDownloadData.get(0).getOrgCode(), "20211125", outPath, studentInfos, exam);
 
     }
 }
