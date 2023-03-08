@@ -62,7 +62,7 @@ public class DBFDealData {
         for (int i = 0; i < dbfData.size(); i++) {
             DBFData data = dbfData.get(i);
             XSSFRow row = sheet.createRow(i + 1);
-            row.createCell(0).setCellValue("20221029");
+            row.createCell(0).setCellValue("20230311");
             row.createCell(1).setCellValue(data.getZjhm());
             row.createCell(2).setCellValue(data.getKsxm());
             row.createCell(3).setCellValue(data.getZkzh());
@@ -88,7 +88,7 @@ public class DBFDealData {
         for (int i = 0; i < collect.size(); i++) {
             DBFData data = collect.get(i);
             XSSFRow row = sheet.createRow(i + 1);
-            row.createCell(0).setCellValue("20221029");
+            row.createCell(0).setCellValue("20230311");
             row.createCell(1).setCellValue(data.getKsxm());
 
             int sexCode = 0;
@@ -124,7 +124,7 @@ public class DBFDealData {
         for (String kmdm : keys) {
             DBFData data = collect.get(kmdm);
             XSSFRow row = sheet.createRow(i);
-            row.createCell(0).setCellValue("20221029");
+            row.createCell(0).setCellValue("20230311");
             row.createCell(1).setCellValue(kmdm);
             row.createCell(2).setCellValue(data.getKmmc());
 
@@ -156,7 +156,7 @@ public class DBFDealData {
                 continue;
             }
             XSSFRow row = sheet.createRow(i);
-            row.createCell(0).setCellValue("20221029");
+            row.createCell(0).setCellValue("20230311");
             row.createCell(1).setCellValue(ssData.getSceneCode());
             row.createCell(2).setCellValue(ssData.getSceneName());
             row.createCell(3).setCellValue(ssData.getStartTime());
@@ -178,10 +178,10 @@ public class DBFDealData {
         }
         for (int i = 0; i < 1; i++) {
             XSSFRow row = sheet.createRow(i + 1);
-            row.createCell(0).setCellValue("20221029");
+            row.createCell(0).setCellValue("20230311");
             row.createCell(1).setCellValue("教师资格考试");
-            row.createCell(2).setCellValue("2022-10-29 00:00:00");
-            row.createCell(3).setCellValue("2022-10-29 23:59:59");
+            row.createCell(2).setCellValue("2023-03-09 00:00:00");
+            row.createCell(3).setCellValue("2023-03-13 23:59:59");
             row.createCell(4).setCellValue("1");
             row.createCell(5).setCellValue("教师资格考试");
         }
