@@ -27,7 +27,7 @@ public class SQLiteDealData {
         //创建表格
         XSSFSheet sheet = workbook.createSheet();
         //定义头标题
-        String[] title = {"姓名", "身份证号", "考场号", "考生号", "验证照片", "总验证结果", "人脸验证结果", "指纹验证结果"};
+        String[] title = {"姓名", "身份证号", "考场号", "考生号", "验证照片", "总验证结果", "人脸验证结果", "指纹验证结果", "验证时间"};
         //创建标题
         XSSFRow titleRow = sheet.createRow(0);
         for (int i = 0; i < title.length; i++) {
@@ -45,6 +45,7 @@ public class SQLiteDealData {
             row.createCell(5).setCellValue((SQLiteData.getFacecheckresult() != 1 && SQLiteData.getFingercheckresult() != 1) ? "失败" : "成功");
             row.createCell(6).setCellValue(SQLiteData.getFacecheckresult() == 1 ? "成功" : "失败");
             row.createCell(7).setCellValue(SQLiteData.getFingercheckresult() == 1 ? "成功" : "失败");
+            row.createCell(8).setCellValue(SQLiteData.getVerifytime());
             //存储照片
             FileUtil.savePhoto(outPath, SQLiteData.getIdcardnum(), SQLiteData.getScenePhoto(), SQLiteData.getRoomnum());
 

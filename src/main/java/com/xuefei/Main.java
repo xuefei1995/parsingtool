@@ -12,7 +12,7 @@ import java.util.Map;
 public class Main {
 
     //设置当前模式
-    private static final String model = ModelConst.DBF_MODEL;
+    private static final String model = ModelConst.SQLITE_MODEL;
 
     private static final Map<String, Window> map = new HashMap<>();
 

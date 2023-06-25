@@ -23,6 +23,8 @@ public class SQLiteData {
     private int facecheckresult;
     // 指纹验证结果
     private int fingercheckresult;
+    // 验证时间
+    private String verifytime;
 
     @Override
     public boolean equals(Object o) {

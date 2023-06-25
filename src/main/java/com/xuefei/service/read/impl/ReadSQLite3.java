@@ -32,7 +32,7 @@ public class ReadSQLite3 implements ReadSQLite {
             ResultSet resultSet = null;
             try {
                 connection = DriverManager.getConnection("jdbc:sqlite:" + path);
-                preparedStatement = connection.prepareStatement("select name, examcardnum, roomnum, idcardnum, scenephoto, facecheckresult, fingercheckresult from tl_upload_student");
+                preparedStatement = connection.prepareStatement("select name, examcardnum, roomnum, idcardnum, scenephoto, facecheckresult, fingercheckresult, verifytime from tl_upload_student");
                 resultSet = preparedStatement.executeQuery();
                 while (resultSet.next()) {
                     SQLiteData SQLiteData = new SQLiteData();
@@ -44,6 +44,7 @@ public class ReadSQLite3 implements ReadSQLite {
                     SQLiteData.setScenePhoto(resultSet.getString("scenephoto"));
                     SQLiteData.setFacecheckresult(resultSet.getInt("facecheckresult"));
                     SQLiteData.setFingercheckresult(resultSet.getInt("fingercheckresult"));
+                    SQLiteData.setVerifytime(resultSet.getString("verifytime"));
 
                     set.add(SQLiteData);
                 }
